@@ -47,7 +47,7 @@ public class CountGrantsModel : PageModel
       ON students.id = grants.ID
       JOIN ac_database.rating
       ON students.id = rating.student
-      ORDER BY grants.amount DESC;";
+      ORDER BY Score DESC;";
     grantsList = _dapper.LoadData<GrantDTO>(sql);
     System.Console.WriteLine(grantsList.First().Score);
     lastUpdated = grantsList.First().Updated;
