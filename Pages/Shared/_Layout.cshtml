@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GrantApp.styles.css" asp-append-version="true" />
+    <link rel="icon" href="images/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="dropdown mt-5 ms-5">
+                <a class="dropdown-toggle" data-bs-toggle="dropdown">
+                    <img class="img-fluid" src="/images/logoBlue.png" style="height: 50px;" />
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="dropdown-item" asp-area="" asp-page="/Index" style="color: rgb(8, 59, 104);">Список
+                            студентов</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" asp-area="" asp-page="/CountGrants"
+                            style="color: rgb(8, 59, 104);">Рассчет стипендии</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" asp-area="" asp-page="/GrantsTable"
+                            style="color: rgb(8, 59, 104);">Стипендии</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - GrantApp - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

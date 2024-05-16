@@ -1,0 +1,42 @@
+@page
+@model GrantsTableModel
+@{
+  ViewData["Title"] = "Главная страница";
+}
+
+<div class="container px-5 d-flex justify-content-center mt-5 mx-xl-5">
+  <div class="card text-center rounded shadow-sm" style="width: 800px">
+    <div class="card-body">
+      <div class="card-title mb-4">
+        <h4 class="pt-1" style="color:rgb(68, 64, 51);">Стипендии</h4>
+      </div>
+
+      <div class="row container-fluid table-responsive mx-xl-5 mx-2 my-5"
+        style="border:1px solid; border-radius:10px; border-color:lightgray; width:auto">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>Студент</th>
+              <th>Баллы</th>
+              <th>Стипендия</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach (var garnt in Model.grantsList)
+            {
+              <tr>
+                <td>@garnt.Full_Name</td>
+                <td>@garnt.Score</td>
+                <td>@garnt.Amount</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      @if (Model.lastUpdated != null)
+      {
+        <p>Последнее обновление: @Model.lastUpdated</p>
+      }
+    </div>
+  </div>
+</div>
