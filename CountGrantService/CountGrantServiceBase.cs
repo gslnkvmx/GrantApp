@@ -52,7 +52,6 @@ namespace GrantApp.Services
 
       if (payForPoint * rates.First().Value < minGrant)
       {
-        System.Console.WriteLine("Считаю....");
         decimal minPoints = minGrant / payForPoint;
 
         decimal norm = minPoints * 2 - rates.First().Value;

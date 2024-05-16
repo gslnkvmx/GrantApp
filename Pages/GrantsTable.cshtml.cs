@@ -23,13 +23,20 @@ public class GrantsTableModel : PageModel
 
   public void OnGet()
   {
-    string sql = @"SELECT concat_ws(' ', last_name, first_name, middle_name) AS full_name, amount, updated, scores as Score
+    try
+    {
+      string sql = @"SELECT concat_ws(' ', last_name, first_name, middle_name) AS full_name, amount, updated, scores as Score
       FROM ac_database.students JOIN ac_database.grants 
       ON students.id = grants.ID
       JOIN ac_database.rating
       ON students.id = rating.student
       ORDER BY Score DESC;";
-    grantsList = _dapper.LoadData<GrantDTO>(sql);
-    lastUpdated = grantsList.First().Updated;
+      grantsList = _dapper.LoadData<GrantDTO>(sql);
+      lastUpdated = grantsList.First().Updated;
+    }
+    catch (Exception)
+    {
+      ErrorMessage = "Таблица пустая!";
+    }
   }
 }
