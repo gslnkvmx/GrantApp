@@ -1,4 +1,4 @@
-add grants table
++ add grants table
 
 CREATE TABLE `grants` (
   `ID` int NOT NULL,
@@ -8,7 +8,8 @@ CREATE TABLE `grants` (
   UNIQUE KEY `ID_UNIQUE` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
-add Users table
++ add Users table
+
 CREATE TABLE `users` (
   `idusers` int NOT NULL,
   `login` varchar(45) NOT NULL,
