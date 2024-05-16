@@ -65,3 +65,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/code projects/GrantApp/GrantApp/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zuu21mhxty
+
+[C:/code projects/GrantApp/GrantApp/Pages/Shared/_LayoutNoHeader.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXROb0hlYWRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-w9elfnjfux
